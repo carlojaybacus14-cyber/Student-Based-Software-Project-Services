@@ -29,34 +29,51 @@ public class ArrayListUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(26, 26, 26));
 
+        jTextArea1.setBackground(new java.awt.Color(17, 17, 17));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(85, 85, 85));
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
+        jButton1.setBackground(new java.awt.Color(44, 44, 44));
         jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(224, 224, 224));
         jButton1.setText("Access");
 
+        jButton2.setBackground(new java.awt.Color(44, 44, 44));
         jButton2.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(224, 224, 224));
         jButton2.setText("Change");
 
+        jButton3.setBackground(new java.awt.Color(56, 40, 40));
         jButton3.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(224, 136, 136));
         jButton3.setText("Remove");
 
+        jButton4.setBackground(new java.awt.Color(44, 44, 44));
         jButton4.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(224, 224, 224));
         jButton4.setText("Add");
 
+        jTextField1.setBackground(new java.awt.Color(17, 17, 17));
         jTextField1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(221, 221, 221));
 
+        jLabel2.setBackground(new java.awt.Color(17, 17, 17));
         jLabel2.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ARRAY LIST");
 
         jLabel4.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(136, 136, 136));
         jLabel4.setText("User Input");
 
         jLabel3.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(136, 136, 136));
         jLabel3.setText("Output");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
