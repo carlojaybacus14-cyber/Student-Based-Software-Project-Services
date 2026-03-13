@@ -4,8 +4,11 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CircularLinkedListUI.class.getName());
     
+    private CircularLinkedList circularList;
+    
     public CircularLinkedListUI() {
         initComponents();
+        circularList = new CircularLinkedList();
     }
     
     @SuppressWarnings("unchecked")
@@ -119,7 +122,6 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         java.awt.EventQueue.invokeLater(() -> new CircularLinkedListUI().setVisible(true));
     }
 

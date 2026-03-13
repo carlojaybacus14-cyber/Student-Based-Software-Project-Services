@@ -1,25 +1,22 @@
 package Danosos;
 
-import java.util.ArrayList;
+import java.util.ArrayDeque;
 
-public class ArrayListUI extends javax.swing.JFrame {
+public class ArrayDequeUI1 extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayListUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeUI1.class.getName());
     
-    private ArrayList<Integer> arrayList;
+    private ArrayDeque<Integer> arrayDeque;
     
-    public ArrayListUI() {
+    public ArrayDequeUI1() {
         initComponents();
-        arrayList = new ArrayList<>();
+        arrayDeque = new ArrayDeque<>();
     }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -27,8 +24,32 @@ public class ArrayListUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton2.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton2.setText("Peek");
+
+        jButton3.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton3.setText("Clear");
+
+        jButton4.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton4.setText("Offer");
+
+        jTextField1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ARRAY DEQUE");
+
+        jLabel4.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jLabel4.setText("User Input");
+
+        jLabel3.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jLabel3.setText("Output");
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
@@ -36,28 +57,7 @@ public class ArrayListUI extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea1);
 
         jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton1.setText("Access");
-
-        jButton2.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton2.setText("Change");
-
-        jButton3.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton3.setText("Remove");
-
-        jButton4.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton4.setText("Add");
-
-        jTextField1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-
-        jLabel2.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ARRAY LIST");
-
-        jLabel4.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-        jLabel4.setText("User Input");
-
-        jLabel3.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-        jLabel3.setText("Output");
+        jButton1.setText("Poll");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,7 +123,8 @@ public class ArrayListUI extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        java.awt.EventQueue.invokeLater(() -> new ArrayListUI().setVisible(true));
+
+        java.awt.EventQueue.invokeLater(() -> new ArrayDequeUI1().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
