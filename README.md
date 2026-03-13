@@ -1,2 +1,2 @@
-- Netbeans specific project
+- Netbeans specific projects
 - Commissions from BSIS-1A students in DSSC
