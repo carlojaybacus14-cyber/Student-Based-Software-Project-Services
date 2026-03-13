@@ -1,6 +1,7 @@
 package Danosos;
 
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.*;
 
 public class ArrayListUI extends javax.swing.JFrame {
 
@@ -11,6 +12,7 @@ public class ArrayListUI extends javax.swing.JFrame {
     public ArrayListUI() {
         initComponents();
         arrayList = new ArrayList<>();
+        getContentPane().setBackground(new Color(26, 26, 26));
     }
     
     @SuppressWarnings("unchecked")

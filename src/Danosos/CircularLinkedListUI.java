@@ -1,5 +1,7 @@
 package Danosos;
 
+import java.awt.*;
+
 public class CircularLinkedListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CircularLinkedListUI.class.getName());
@@ -9,6 +11,7 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
     public CircularLinkedListUI() {
         initComponents();
         circularList = new CircularLinkedList();
+        getContentPane().setBackground(new Color(26, 26, 26));
     }
     
     @SuppressWarnings("unchecked")
@@ -28,34 +31,51 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(26, 26, 26));
 
+        jTextArea1.setBackground(new java.awt.Color(17, 17, 17));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(85, 85, 85));
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jButton1.setBackground(new java.awt.Color(44, 44, 44));
         jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(224, 224, 224));
         jButton1.setText("Traverse");
 
+        jButton2.setBackground(new java.awt.Color(44, 44, 44));
         jButton2.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(224, 224, 224));
         jButton2.setText("Length");
 
+        jButton3.setBackground(new java.awt.Color(50, 40, 40));
         jButton3.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(224, 136, 136));
         jButton3.setText("Delete");
 
+        jButton4.setBackground(new java.awt.Color(44, 44, 44));
         jButton4.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(224, 224, 224));
         jButton4.setText("Insert");
 
+        jTextField1.setBackground(new java.awt.Color(17, 17, 17));
         jTextField1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(221, 221, 221));
 
+        jLabel1.setBackground(new java.awt.Color(17, 17, 17));
         jLabel1.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CIRCULAR LINKED LIST");
 
         jLabel2.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(136, 136, 136));
         jLabel2.setText("User Input");
 
         jLabel3.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(136, 136, 136));
         jLabel3.setText("Output");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
