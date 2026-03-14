@@ -24,11 +24,12 @@ public class CircularLinkedList {
     }
 
     // --- TRAVERSE ---
-    public void traverse() {
+    public String traverse() {
         if (head == null) {
-            return;
+            return "List is empty.";
         }
 
+        String txtContainer = "";
         String output = "";
         String line = "";
         Node current = head;
@@ -36,7 +37,7 @@ public class CircularLinkedList {
         do {
             String localOutput = current.data + " -> ";
             output += localOutput;
-            System.out.print(localOutput);
+            txtContainer += localOutput;
             current = current.next;
         } while (current.next != head);
 
@@ -44,7 +45,9 @@ public class CircularLinkedList {
             line += "_";
         }
 
-        System.out.println(current.data + "\n|" + line + "|");
+        txtContainer += current.data + "\n|" + line + "|";
+        
+        return txtContainer;
     }
 
     // --- INSERT AT BEGINNING ---
@@ -110,9 +113,9 @@ public class CircularLinkedList {
     }
 
     // --- DELETE ---
-    public void delete(int data) {
+    public boolean delete(int data) {
         if (head == null) {
-            return;
+            return false;
         }
 
         Node current = head;
@@ -136,13 +139,14 @@ public class CircularLinkedList {
                     }
                 }
                 size--;
-                return;
+                return true;
             }
             previous = current;
             current = current.next;
         } while (current != head);
 
         System.out.println(data + " not fount in the list.");
+        return false;
     }
 
     // --- DELETE AT ---
@@ -178,7 +182,7 @@ public class CircularLinkedList {
     }
 
     // --- SIZE ---
-    public int size() {
+    public int length() {
         return size;
     }
 }

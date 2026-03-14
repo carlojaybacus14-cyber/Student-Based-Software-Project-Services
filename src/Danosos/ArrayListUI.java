@@ -38,7 +38,7 @@ public class ArrayListUI extends javax.swing.JFrame {
         txtOutput.setEditable(false);
         txtOutput.setBackground(new java.awt.Color(17, 17, 17));
         txtOutput.setColumns(20);
-        txtOutput.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        txtOutput.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         txtOutput.setForeground(new java.awt.Color(255, 255, 255));
         txtOutput.setRows(5);
         jScrollPane2.setViewportView(txtOutput);
@@ -84,7 +84,7 @@ public class ArrayListUI extends javax.swing.JFrame {
         });
 
         txtInput.setBackground(new java.awt.Color(17, 17, 17));
-        txtInput.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        txtInput.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         txtInput.setForeground(new java.awt.Color(221, 221, 221));
 
         jLabel2.setBackground(new java.awt.Color(17, 17, 17));
@@ -157,7 +157,7 @@ public class ArrayListUI extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, message, "error", JOptionPane.ERROR_MESSAGE);
     }
     
-    public void showReminderDialog() {
+    private void showReminderDialog() {
         JOptionPane.showMessageDialog(this, "Array list is empty");
     }
     

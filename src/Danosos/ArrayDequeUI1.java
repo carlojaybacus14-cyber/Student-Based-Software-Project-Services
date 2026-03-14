@@ -2,12 +2,14 @@ package Danosos;
 
 import java.awt.*;
 import java.util.*;
+import javax.swing.JOptionPane;
 
 public class ArrayDequeUI1 extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeUI1.class.getName());
     
-    private ArrayDeque<Integer> arrayDeque;
+    private final ArrayDeque<Integer> arrayDeque;
+    private String txtContainer = "";
     
     public ArrayDequeUI1() {
         initComponents();
@@ -15,42 +17,69 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
         getContentPane().setBackground(new Color(26, 26, 26));
     }
     
+    private void display() {
+        txtOutput.setText(txtContainer);
+    }
+    
+    private void showErrorDialog(String message) {
+        JOptionPane.showMessageDialog(this, message, "error", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    private void showReminderDialog() {
+        JOptionPane.showMessageDialog(this, "Array list is empty");
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnPeek = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        btnOffer = new javax.swing.JButton();
+        txtInput = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        txtOutput = new javax.swing.JTextArea();
+        btnPoll = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(26, 26, 26));
 
-        jButton2.setBackground(new java.awt.Color(44, 44, 44));
-        jButton2.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(224, 224, 224));
-        jButton2.setText("Peek");
+        btnPeek.setBackground(new java.awt.Color(44, 44, 44));
+        btnPeek.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnPeek.setForeground(new java.awt.Color(224, 224, 224));
+        btnPeek.setText("Peek");
+        btnPeek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPeekActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(56, 40, 40));
-        jButton3.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(224, 136, 136));
-        jButton3.setText("Clear");
+        btnClear.setBackground(new java.awt.Color(56, 40, 40));
+        btnClear.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(224, 136, 136));
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(44, 44, 44));
-        jButton4.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(224, 224, 224));
-        jButton4.setText("Offer");
+        btnOffer.setBackground(new java.awt.Color(44, 44, 44));
+        btnOffer.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnOffer.setForeground(new java.awt.Color(224, 224, 224));
+        btnOffer.setText("Offer");
+        btnOffer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOfferActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setBackground(new java.awt.Color(17, 17, 17));
-        jTextField1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(221, 221, 221));
+        txtInput.setBackground(new java.awt.Color(17, 17, 17));
+        txtInput.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txtInput.setForeground(new java.awt.Color(221, 221, 221));
 
         jLabel2.setBackground(new java.awt.Color(17, 17, 17));
         jLabel2.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
@@ -66,17 +95,23 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(136, 136, 136));
         jLabel3.setText("Output");
 
-        jTextArea1.setBackground(new java.awt.Color(17, 17, 17));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(85, 85, 85));
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtOutput.setEditable(false);
+        txtOutput.setBackground(new java.awt.Color(17, 17, 17));
+        txtOutput.setColumns(20);
+        txtOutput.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txtOutput.setForeground(new java.awt.Color(255, 255, 255));
+        txtOutput.setRows(5);
+        jScrollPane2.setViewportView(txtOutput);
 
-        jButton1.setBackground(new java.awt.Color(44, 44, 44));
-        jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(224, 224, 224));
-        jButton1.setText("Poll");
+        btnPoll.setBackground(new java.awt.Color(44, 44, 44));
+        btnPoll.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnPoll.setForeground(new java.awt.Color(224, 224, 224));
+        btnPoll.setText("Poll");
+        btnPoll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPollActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,14 +123,14 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtInput, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -108,13 +143,13 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel4)
                 .addGap(4, 4, 4)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPoll, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,6 +160,58 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
+        int data;
+        try {
+            data = Integer.parseInt(txtInput.getText());
+        } catch (NumberFormatException e) {
+            showErrorDialog("Invalid user input");
+            return;
+        }
+        
+        arrayDeque.offer(data);
+        txtContainer += arrayDeque + "\n";
+        display();
+    }//GEN-LAST:event_btnOfferActionPerformed
+
+    private void btnPollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPollActionPerformed
+        if (arrayDeque.isEmpty()) {
+            showReminderDialog();
+            return;
+        }
+        
+        arrayDeque.poll();
+        
+        if (arrayDeque.isEmpty()) {
+            txtContainer += "Array is now Empty.\n";
+        } else {
+            txtContainer += arrayDeque + "\n";
+        }
+        
+        display();
+    }//GEN-LAST:event_btnPollActionPerformed
+
+    private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+        if (arrayDeque.isEmpty()) {
+            showReminderDialog();
+            return;
+        }
+        
+        txtContainer += "Peeked top element: " + arrayDeque.peek() + "\n";
+        display();
+    }//GEN-LAST:event_btnPeekActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        if (arrayDeque.isEmpty()) {
+            showReminderDialog();
+            return;
+        }
+        
+        arrayDeque.clear();
+        txtContainer += "Array is now Empty.\n";
+        display();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -147,15 +234,15 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnOffer;
+    private javax.swing.JButton btnPeek;
+    private javax.swing.JButton btnPoll;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtInput;
+    private javax.swing.JTextArea txtOutput;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,17 +1,31 @@
 package Danosos;
 
 import java.awt.*;
+import javax.swing.JOptionPane;
 
 public class CircularLinkedListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CircularLinkedListUI.class.getName());
     
-    private CircularLinkedList circularList;
+    private final CircularLinkedList circularList;
+    private String txtContainer = "";
     
     public CircularLinkedListUI() {
         initComponents();
         circularList = new CircularLinkedList();
         getContentPane().setBackground(new Color(26, 26, 26));
+    }
+    
+    private void display() {
+        txtOutput.setText(txtContainer);
+    }
+    
+    private void showErrorDialog(String message) {
+        JOptionPane.showMessageDialog(this, message, "error", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    private void showReminderDialog() {
+        JOptionPane.showMessageDialog(this, "Array list is empty");
     }
     
     @SuppressWarnings("unchecked")
@@ -20,12 +34,12 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtOutput = new javax.swing.JTextArea();
+        btnTraverse = new javax.swing.JButton();
+        btnLength = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnInsert = new javax.swing.JButton();
+        txtInput = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -33,36 +47,57 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(26, 26, 26));
 
-        jTextArea1.setBackground(new java.awt.Color(17, 17, 17));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(85, 85, 85));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtOutput.setEditable(false);
+        txtOutput.setBackground(new java.awt.Color(17, 17, 17));
+        txtOutput.setColumns(20);
+        txtOutput.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txtOutput.setForeground(new java.awt.Color(255, 255, 255));
+        txtOutput.setRows(5);
+        jScrollPane1.setViewportView(txtOutput);
 
-        jButton1.setBackground(new java.awt.Color(44, 44, 44));
-        jButton1.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(224, 224, 224));
-        jButton1.setText("Traverse");
+        btnTraverse.setBackground(new java.awt.Color(44, 44, 44));
+        btnTraverse.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnTraverse.setForeground(new java.awt.Color(224, 224, 224));
+        btnTraverse.setText("Traverse");
+        btnTraverse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTraverseActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(44, 44, 44));
-        jButton2.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(224, 224, 224));
-        jButton2.setText("Length");
+        btnLength.setBackground(new java.awt.Color(44, 44, 44));
+        btnLength.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnLength.setForeground(new java.awt.Color(224, 224, 224));
+        btnLength.setText("Length");
+        btnLength.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLengthActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(50, 40, 40));
-        jButton3.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(224, 136, 136));
-        jButton3.setText("Delete");
+        btnDelete.setBackground(new java.awt.Color(50, 40, 40));
+        btnDelete.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(224, 136, 136));
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(44, 44, 44));
-        jButton4.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(224, 224, 224));
-        jButton4.setText("Insert");
+        btnInsert.setBackground(new java.awt.Color(44, 44, 44));
+        btnInsert.setFont(new java.awt.Font("Mongolian Baiti", 1, 12)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(224, 224, 224));
+        btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setBackground(new java.awt.Color(17, 17, 17));
-        jTextField1.setFont(new java.awt.Font("Mongolian Baiti", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(221, 221, 221));
+        txtInput.setBackground(new java.awt.Color(17, 17, 17));
+        txtInput.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        txtInput.setForeground(new java.awt.Color(221, 221, 221));
 
         jLabel1.setBackground(new java.awt.Color(17, 17, 17));
         jLabel1.setFont(new java.awt.Font("Mongolian Baiti", 1, 18)); // NOI18N
@@ -88,14 +123,14 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnTraverse, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtInput, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -108,13 +143,13 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel2)
                 .addGap(4, 4, 4)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTraverse, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,6 +160,48 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        int data;
+        try {
+            data = Integer.parseInt(txtInput.getText());
+        } catch (NumberFormatException e) {
+            showErrorDialog("Invalid user input");
+            return;
+        }
+        
+        circularList.insertAtEnd(data);
+        txtContainer += data + " has been inserted.\n";
+        display();
+    }//GEN-LAST:event_btnInsertActionPerformed
+
+    private void btnTraverseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraverseActionPerformed
+        txtContainer += circularList.traverse() + "\n";
+        display();
+    }//GEN-LAST:event_btnTraverseActionPerformed
+
+    private void btnLengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLengthActionPerformed
+        txtContainer += "Length: " + circularList.length() + "\n";
+        display();
+    }//GEN-LAST:event_btnLengthActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        int data;
+        try {
+            data = Integer.parseInt(txtInput.getText());
+        } catch (NumberFormatException e) {
+            showErrorDialog("Delete what?");
+            return;
+        }
+        
+        if (circularList.delete(data)) {
+            txtContainer += data + " has been deleted.\n";
+        } else {
+            txtContainer += data + " is not on the list.\n";
+        }
+        
+        display();
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -147,16 +224,16 @@ public class CircularLinkedListUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnInsert;
+    private javax.swing.JButton btnLength;
+    private javax.swing.JButton btnTraverse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtInput;
+    private javax.swing.JTextArea txtOutput;
     // End of variables declaration//GEN-END:variables
 }
