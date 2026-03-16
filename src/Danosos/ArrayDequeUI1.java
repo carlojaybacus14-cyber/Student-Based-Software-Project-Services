@@ -167,9 +167,10 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-        // This method runs when the "Offer" button is clicked
+    
+    // This method runs when the "Offer" button is clicked
     private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
-        int data;     // Variable to store user input number
+        int data;     
         try {
             data = Integer.parseInt(txtInput.getText());     // Convert the text from txtInput into an integer
         } catch (NumberFormatException e) {
@@ -182,15 +183,16 @@ public class ArrayDequeUI1 extends javax.swing.JFrame {
         display();
     }//GEN-LAST:event_btnOfferActionPerformed
 
+    // POLL BUTTON: Removes the first element
     private void btnPollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPollActionPerformed
         if (arrayDeque.isEmpty()) {
-            showReminderDialog();
+            showReminderDialog();    // Stop if there is nothing to remove
             return;
         }
         
-        arrayDeque.poll();
+        arrayDeque.poll();     // Removes the element at the front
         
-        if (arrayDeque.isEmpty()) {
+        if (arrayDeque.isEmpty()) {     // Check if the deque became empty after removal
             txtContainer += "Array is now Empty.\n";
         } else {
             txtContainer += arrayDeque + "\n";
