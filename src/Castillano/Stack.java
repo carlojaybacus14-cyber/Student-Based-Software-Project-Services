@@ -60,6 +60,7 @@ public class Stack extends javax.swing.JFrame {
 
                 jButton3.setBackground(new java.awt.Color(107, 30, 35));
                 jButton3.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+                jButton3.setForeground(new java.awt.Color(245, 225, 225));
                 jButton3.setText("PEEK");
 
                 jButton4.setBackground(new java.awt.Color(114, 16, 16));

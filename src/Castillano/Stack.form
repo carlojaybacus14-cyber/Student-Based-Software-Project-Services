@@ -110,6 +110,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gloucester MT Extra Condensed" size="14" style="0"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e1" green="e1" red="f5" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="PEEK"/>
       </Properties>
     </Component>
