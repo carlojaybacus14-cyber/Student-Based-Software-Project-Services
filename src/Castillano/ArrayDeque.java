@@ -4,6 +4,8 @@
  */
 package Castillano;
 
+import java.awt.Color;
+
 /**
  *
  * @author Jay Aguirre Alfeche
@@ -17,6 +19,7 @@ public class ArrayDeque extends javax.swing.JFrame {
          */
         public ArrayDeque() {
                 initComponents();
+                getContentPane().setBackground(new Color(44, 15, 18));
         }
 
         /**
@@ -30,7 +33,6 @@ public class ArrayDeque extends javax.swing.JFrame {
 
                 jDialog1 = new javax.swing.JDialog();
                 jLabel1 = new javax.swing.JLabel();
-                jScrollPane1 = new javax.swing.JScrollPane();
                 jTextArea1 = new javax.swing.JTextArea();
                 jTextField1 = new javax.swing.JTextField();
                 jLabel2 = new javax.swing.JLabel();
@@ -53,17 +55,25 @@ public class ArrayDeque extends javax.swing.JFrame {
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
                 jLabel1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 1, 24)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(210, 140, 140));
                 jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 jLabel1.setText("ARRAY DEQUE");
 
+                jTextArea1.setBackground(new java.awt.Color(62, 20, 22));
                 jTextArea1.setColumns(20);
+                jTextArea1.setForeground(new java.awt.Color(245, 225, 225));
                 jTextArea1.setRows(5);
-                jScrollPane1.setViewportView(jTextArea1);
+
+                jTextField1.setBackground(new java.awt.Color(44, 15, 18));
+                jTextField1.setForeground(new java.awt.Color(245, 225, 225));
 
                 jLabel2.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+                jLabel2.setForeground(new java.awt.Color(210, 140, 140));
                 jLabel2.setText("Enter Data:");
 
+                jButton1.setBackground(new java.awt.Color(107, 30, 35));
                 jButton1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(245, 225, 225));
                 jButton1.setText("OFFER");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,13 +81,19 @@ public class ArrayDeque extends javax.swing.JFrame {
                         }
                 });
 
+                jButton2.setBackground(new java.awt.Color(107, 30, 35));
                 jButton2.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+                jButton2.setForeground(new java.awt.Color(245, 225, 225));
                 jButton2.setText("POLL");
 
+                jButton3.setBackground(new java.awt.Color(107, 30, 35));
                 jButton3.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+                jButton3.setForeground(new java.awt.Color(245, 225, 225));
                 jButton3.setText("PEEK");
 
+                jButton4.setBackground(new java.awt.Color(114, 16, 16));
                 jButton4.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
+                jButton4.setForeground(new java.awt.Color(245, 225, 225));
                 jButton4.setText("CLEAR");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,21 +102,22 @@ public class ArrayDeque extends javax.swing.JFrame {
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                                        .addComponent(jTextField1)
-                                        .addComponent(jScrollPane1)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                                                .addComponent(jTextField1)
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                        .addGap(6, 6, 6)
+                                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addContainerGap(19, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
@@ -109,8 +126,8 @@ public class ArrayDeque extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,7 +180,6 @@ public class ArrayDeque extends javax.swing.JFrame {
         private javax.swing.JDialog jDialog1;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
-        private javax.swing.JScrollPane jScrollPane1;
         private javax.swing.JTextArea jTextArea1;
         private javax.swing.JTextField jTextField1;
         // End of variables declaration//GEN-END:variables
