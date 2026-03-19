@@ -32,7 +32,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton1" alignment="0" pref="82" max="32767" attributes="0"/>
+                                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -43,7 +43,7 @@
                           <Component id="jTextField1" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="237" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="235" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel2" min="-2" pref="168" max="-2" attributes="0"/>
@@ -98,7 +98,7 @@
           <Font name="Gill Sans Ultra Bold Condensed" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="ARRAYLIST"/>
+        <Property name="text" type="java.lang.String" value="ARRAY"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -142,7 +142,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gill Sans Ultra Bold Condensed" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="POLL"/>
+        <Property name="text" type="java.lang.String" value="DELETE"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
@@ -150,7 +150,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Gill Sans Ultra Bold Condensed" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="PEEK"/>
+        <Property name="text" type="java.lang.String" value="SEARCH"/>
       </Properties>
     </Component>
   </SubComponents>
