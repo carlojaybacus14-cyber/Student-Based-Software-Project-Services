@@ -29,10 +29,10 @@
                   <Component id="jLabel1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnPush" max="32767" attributes="0"/>
-                          <Component id="btnPop" max="32767" attributes="0"/>
-                          <Component id="btnPeek" max="32767" attributes="0"/>
-                          <Component id="btnEmpty" max="32767" attributes="0"/>
+                          <Component id="btnAdd" max="32767" attributes="0"/>
+                          <Component id="btnChange" max="32767" attributes="0"/>
+                          <Component id="btnRemove" max="32767" attributes="0"/>
+                          <Component id="btnClear" max="32767" attributes="0"/>
                           <Component id="lblEnterData" alignment="0" pref="113" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -59,13 +59,13 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnPush" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnAdd" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPop" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnChange" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPeek" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnRemove" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnEmpty" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnClear" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" min="-2" pref="230" max="-2" attributes="0"/>
               </Group>
@@ -84,7 +84,7 @@
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="STACK"/>
+        <Property name="text" type="java.lang.String" value="ARRAYLIST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterData">
@@ -113,7 +113,7 @@
         <Property name="horizontalAlignment" type="int" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPush">
+    <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -124,10 +124,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Push"/>
+        <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPop">
+    <Component class="javax.swing.JButton" name="btnChange">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -138,10 +141,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Pop"/>
+        <Property name="text" type="java.lang.String" value="Change"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChangeActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPeek">
+    <Component class="javax.swing.JButton" name="btnRemove">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -152,10 +158,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Peek"/>
+        <Property name="text" type="java.lang.String" value="Remove"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEmpty">
+    <Component class="javax.swing.JButton" name="btnClear">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -166,8 +175,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Empty"/>
+        <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>

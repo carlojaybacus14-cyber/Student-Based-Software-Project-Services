@@ -29,10 +29,10 @@
                   <Component id="jLabel1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnAdd" max="32767" attributes="0"/>
-                          <Component id="btnPoll" max="32767" attributes="0"/>
+                          <Component id="btnPush" max="32767" attributes="0"/>
+                          <Component id="btnPop" max="32767" attributes="0"/>
                           <Component id="btnPeek" max="32767" attributes="0"/>
-                          <Component id="btnClear" max="32767" attributes="0"/>
+                          <Component id="btnEmpty" max="32767" attributes="0"/>
                           <Component id="lblEnterData" alignment="0" pref="113" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -59,13 +59,13 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnAdd" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnPush" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPoll" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnPop" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnPeek" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnClear" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnEmpty" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" min="-2" pref="230" max="-2" attributes="0"/>
               </Group>
@@ -84,7 +84,7 @@
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="ARRAYLIST"/>
+        <Property name="text" type="java.lang.String" value="STACK"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterData">
@@ -113,7 +113,7 @@
         <Property name="horizontalAlignment" type="int" value="2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAdd">
+    <Component class="javax.swing.JButton" name="btnPush">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -124,10 +124,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Add"/>
+        <Property name="text" type="java.lang.String" value="Push"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPushActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPoll">
+    <Component class="javax.swing.JButton" name="btnPop">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -138,8 +141,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Poll"/>
+        <Property name="text" type="java.lang.String" value="Pop"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPopActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPeek">
       <Properties>
@@ -154,8 +160,11 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Peek"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPeekActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnClear">
+    <Component class="javax.swing.JButton" name="btnEmpty">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="40" green="38" red="a" type="rgb"/>
@@ -166,8 +175,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ee" green="d3" red="22" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="text" type="java.lang.String" value="Empty"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmptyActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>

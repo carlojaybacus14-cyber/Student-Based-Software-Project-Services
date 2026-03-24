@@ -1,21 +1,21 @@
-package WIP.Amadeo;
+package Finished.Amadeo;
 
 import java.awt.Color;
-import java.util.Arrays;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class ArrayFrame extends javax.swing.JFrame {
+public class ArrayListFrame extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayFrame.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayListFrame.class.getName());
+
+    private final ArrayList<Integer> arrayList;
 
     private String txtContainer = "";
     
-    private int[] array;
-    
-    public ArrayFrame() {
+    public ArrayListFrame() {
         initComponents();
         getContentPane().setBackground(new Color(13, 42, 46));
-        array = new int[0];
+        arrayList = new ArrayList<>();
     }
 
     @SuppressWarnings("unchecked")
@@ -24,30 +24,30 @@ public class ArrayFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         lblEnterData = new javax.swing.JLabel();
-        txtInput = new javax.swing.JTextField();
+        txtInputData = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
+        btnChange = new javax.swing.JButton();
         btnRemove = new javax.swing.JButton();
-        btnInsert = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtOutput = new javax.swing.JTextArea();
+        txtAreaOutput = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(34, 211, 238));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ARRAY");
+        jLabel1.setText("ARRAYLIST");
 
         lblEnterData.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 20)); // NOI18N
         lblEnterData.setForeground(new java.awt.Color(56, 188, 212));
         lblEnterData.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblEnterData.setText("Enter Data:");
 
-        txtInput.setBackground(new java.awt.Color(7, 26, 29));
-        txtInput.setFont(new java.awt.Font("JetBrains Mono SemiBold", 0, 14)); // NOI18N
-        txtInput.setForeground(new java.awt.Color(168, 234, 245));
-        txtInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtInputData.setBackground(new java.awt.Color(7, 26, 29));
+        txtInputData.setFont(new java.awt.Font("JetBrains Mono SemiBold", 0, 14)); // NOI18N
+        txtInputData.setForeground(new java.awt.Color(168, 234, 245));
+        txtInputData.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         btnAdd.setBackground(new java.awt.Color(10, 56, 64));
         btnAdd.setFont(new java.awt.Font("Rajdhani Medium", 1, 16)); // NOI18N
@@ -56,6 +56,16 @@ public class ArrayFrame extends javax.swing.JFrame {
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
+            }
+        });
+
+        btnChange.setBackground(new java.awt.Color(10, 56, 64));
+        btnChange.setFont(new java.awt.Font("Rajdhani Medium", 1, 16)); // NOI18N
+        btnChange.setForeground(new java.awt.Color(34, 211, 238));
+        btnChange.setText("Change");
+        btnChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeActionPerformed(evt);
             }
         });
 
@@ -69,16 +79,6 @@ public class ArrayFrame extends javax.swing.JFrame {
             }
         });
 
-        btnInsert.setBackground(new java.awt.Color(10, 56, 64));
-        btnInsert.setFont(new java.awt.Font("Rajdhani Medium", 1, 16)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(34, 211, 238));
-        btnInsert.setText("Insert");
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
-            }
-        });
-
         btnClear.setBackground(new java.awt.Color(10, 56, 64));
         btnClear.setFont(new java.awt.Font("Rajdhani Medium", 1, 16)); // NOI18N
         btnClear.setForeground(new java.awt.Color(34, 211, 238));
@@ -89,12 +89,12 @@ public class ArrayFrame extends javax.swing.JFrame {
             }
         });
 
-        txtOutput.setBackground(new java.awt.Color(7, 26, 29));
-        txtOutput.setColumns(20);
-        txtOutput.setFont(new java.awt.Font("JetBrains Mono NL", 1, 14)); // NOI18N
-        txtOutput.setForeground(new java.awt.Color(168, 234, 245));
-        txtOutput.setRows(5);
-        jScrollPane1.setViewportView(txtOutput);
+        txtAreaOutput.setBackground(new java.awt.Color(7, 26, 29));
+        txtAreaOutput.setColumns(20);
+        txtAreaOutput.setFont(new java.awt.Font("JetBrains Mono NL", 1, 14)); // NOI18N
+        txtAreaOutput.setForeground(new java.awt.Color(168, 234, 245));
+        txtAreaOutput.setRows(5);
+        jScrollPane1.setViewportView(txtAreaOutput);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,13 +107,13 @@ public class ArrayFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRemove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblEnterData, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtInput)
+                            .addComponent(txtInputData)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -125,15 +125,15 @@ public class ArrayFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEnterData, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -144,154 +144,102 @@ public class ArrayFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        String str = txtInput.getText();
-        
-        if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter a data");
+        String txt = txtInputData.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data.");
             return;
         }
-        
+
         int data;
-        
+
         try {
-            data = Integer.parseInt(str);
+            data = Integer.parseInt(txt);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid input");
+            JOptionPane.showMessageDialog(this, "Invalid input.");
             return;
         }
-        
-        // Process of adding data in an array
-        int[] newArray = new int[array.length];
-        
-        for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
-        }
-        
-        array = new int[array.length + 1];
-        
-        for (int i = 0; i < newArray.length; i++) {
-            array[i] = newArray[i];
-        }
-        
-        array[newArray.length] = data;
-        // Ends here
-        
-        txtContainer += Arrays.toString(array) + "\n";
-        txtOutput.setText(txtContainer);
+
+        arrayList.add(data);
+
+        txtContainer += arrayList + "\n";
+
+        txtAreaOutput.setText(txtContainer);
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        if (array.length == 0) {
-            JOptionPane.showMessageDialog(this, "Array is empty");
+    private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
+        String txt = txtInputData.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter a data to change.");
             return;
         }
-        
-        String str = txtInput.getText();
-        
-        if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter a data");
+
+        if (arrayList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "List is empty.");
             return;
         }
-        
+
         int data, index;
         
         try {
-            data = Integer.parseInt(str);
+            data = Integer.parseInt(txt);
+            index = Integer.parseInt(JOptionPane.showInputDialog("Enter an index."));
             
-            str = JOptionPane.showInputDialog("Insert " + data + " at index:");
-            
-            if (str == null) {
-                return;
-            }
-            
-            index = Integer.parseInt(str);
-            
-            if (index < 0 || index >= array.length) {
+            if (index < 0 || index >= arrayList.size()) {
                 JOptionPane.showMessageDialog(this, "Index out of bounds");
                 return;
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid input");
+            JOptionPane.showMessageDialog(this, "Invalid input.");
             return;
         }
         
-        // Process of inserting data in an array
-        int[] newArray = new int[array.length + 1];
+        arrayList.set(index, data);
         
-        for (int i = 0; i < index; i++) {
-            newArray[i] = array[i];
+        txtContainer += arrayList + "\n";
+        
+        txtAreaOutput.setText(txtContainer);
+    }//GEN-LAST:event_btnChangeActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        String txt = txtInputData.getText();
+
+        if (txt.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Please enter an index.");
+            return;
         }
-        
-        newArray[index] = data;
-        
-        for (int i = index + 1; i < newArray.length; i++) {
-            newArray[i] = array[i - 1];
+
+        if (arrayList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "List is empty.");
+            return;
         }
-        
-        array = new int[newArray.length];
-        
-        for (int i = 0; i < array.length; i++) {
-            array[i] = newArray[i];
+
+        int index;
+
+        try {
+            index = Integer.parseInt(txt);
+            
+            if (index < 0 || index >= arrayList.size()) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds.");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input.");
+            return;
         }
-        // Ends here
+
+        arrayList.remove(index);
         
-        txtContainer += Arrays.toString(array) + "\n";
-        txtOutput.setText(txtContainer);
+        txtContainer += arrayList + "\n";
+
+        txtAreaOutput.setText(txtContainer);
     }//GEN-LAST:event_btnRemoveActionPerformed
 
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        if (array.length == 0) {
-            JOptionPane.showMessageDialog(this, "Array is empty");
-            return;
-        }
-        
-        String str = txtInput.getText();
-        
-        if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter an index");
-            return;
-        }
-        
-        int index;
-        
-        try {
-            index = Integer.parseInt(str);
-            
-            if (index < 0 || index >= array.length) {
-                JOptionPane.showMessageDialog(this, "Index out of bounds");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid input");
-            return;
-        }
-        
-        // Process of removing/deleting data in an array
-        int[] newArray = new int[array.length - 1];
-        
-        for (int i = 0; i < index; i++) {
-            newArray[i] = array[i];
-        }
-        
-        for (int i = index; i < newArray.length; i++) {
-            newArray[i] = array[i + 1];
-        }
-        
-        array = new int[newArray.length];
-        
-        for (int i = 0; i < newArray.length; i++) {
-            array[i] = newArray[i];
-        }
-        // Ends here
-        
-        txtContainer += Arrays.toString(array) + "\n";
-        txtOutput.setText(txtContainer);
-    }//GEN-LAST:event_btnInsertActionPerformed
-
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        array = new int[0];
-        txtContainer += "Array cleared\n";
-        txtOutput.setText(txtContainer);
+        arrayList.clear();
+        txtContainer += "List cleared.";
+        txtAreaOutput.setText(txtContainer);
     }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
@@ -313,18 +261,18 @@ public class ArrayFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ArrayFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ArrayListFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnChange;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnRemove;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEnterData;
-    private javax.swing.JTextField txtInput;
-    private javax.swing.JTextArea txtOutput;
+    private javax.swing.JTextArea txtAreaOutput;
+    private javax.swing.JTextField txtInputData;
     // End of variables declaration//GEN-END:variables
 }
