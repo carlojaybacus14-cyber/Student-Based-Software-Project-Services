@@ -24,27 +24,20 @@ public class CircularLinkedList {
     }
 
     // --- TRAVERSE ---
-    public void traverse() {
+    public String traverse() {
         if (head == null) {
-            return;
+            return "List is empty";
         }
 
         String output = "";
-        String line = "";
         Node current = head;
 
-        do {
-            String localOutput = current.data + " -> ";
-            output += localOutput;
-            System.out.print(localOutput);
+        do { 
+            output += current.data + " -> ";
             current = current.next;
         } while (current.next != head);
 
-        for (int i = 0; i < output.length() - 1; i++) {
-            line += "_";
-        }
-
-        System.out.println(current.data + "\n|" + line + "|");
+        return output += current.data + "head";
     }
 
     // --- INSERT AT BEGINNING ---

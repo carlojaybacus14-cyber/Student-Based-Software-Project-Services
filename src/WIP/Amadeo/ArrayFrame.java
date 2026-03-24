@@ -198,7 +198,7 @@ public class ArrayFrame extends javax.swing.JFrame {
         try {
             data = Integer.parseInt(str);
             
-            str = JOptionPane.showInputDialog(data + " insert at index:");
+            str = JOptionPane.showInputDialog("Insert " + data + " at index:");
             
             if (str == null) {
                 return;

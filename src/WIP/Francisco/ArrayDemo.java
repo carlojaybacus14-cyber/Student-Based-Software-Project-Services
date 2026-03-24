@@ -137,8 +137,8 @@ public class ArrayDemo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(btnRemove)
+                        .addGap(13, 13, 13)
                         .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
@@ -215,65 +215,6 @@ public class ArrayDemo extends javax.swing.JFrame {
         String str = txtInputData.getText();
         
         if (str.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Enter a data");
-            return;
-        }
-        
-        int data, index;
-        
-        try {
-            data = Integer.parseInt(str);
-            
-            str = JOptionPane.showInputDialog(data + " insert at index:");
-            
-            if (str == null) {
-                return;
-            }
-            
-            index = Integer.parseInt(str);
-            
-            if (index < 0 || index >= array.length) {
-                JOptionPane.showMessageDialog(this, "Index out of bounds");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid input");
-            return;
-        }
-        
-        // Process of inserting data in an array
-        int[] newArray = new int[array.length + 1];
-        
-        for (int i = 0; i < index; i++) {
-            newArray[i] = array[i];
-        }
-        
-        newArray[index] = data;
-        
-        for (int i = index + 1; i < newArray.length; i++) {
-            newArray[i] = array[i - 1];
-        }
-        
-        array = new int[newArray.length];
-        
-        for (int i = 0; i < array.length; i++) {
-            array[i] = newArray[i];
-        }
-        // Ends here
-        
-        texts += Arrays.toString(array) + "\n";
-        txtAreaOutput.setText(texts);
-    }//GEN-LAST:event_btnRemoveActionPerformed
-
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        if (array.length == 0) {
-            JOptionPane.showMessageDialog(this, "Array is empty");
-            return;
-        }
-        
-        String str = txtInputData.getText();
-        
-        if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter an index");
             return;
         }
@@ -306,6 +247,65 @@ public class ArrayDemo extends javax.swing.JFrame {
         array = new int[newArray.length];
         
         for (int i = 0; i < newArray.length; i++) {
+            array[i] = newArray[i];
+        }
+        // Ends here
+        
+        texts += Arrays.toString(array) + "\n";
+        txtAreaOutput.setText(texts);
+    }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        if (array.length == 0) {
+            JOptionPane.showMessageDialog(this, "Array is empty");
+            return;
+        }
+        
+        String str = txtInputData.getText();
+        
+        if (str.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a data");
+            return;
+        }
+        
+        int data, index;
+        
+        try {
+            data = Integer.parseInt(str);
+            
+            str = JOptionPane.showInputDialog("Insert " + data + " at index:");
+            
+            if (str == null) {
+                return;
+            }
+            
+            index = Integer.parseInt(str);
+            
+            if (index < 0 || index >= array.length) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+        
+        // Process of inserting data in an array
+        int[] newArray = new int[array.length + 1];
+        
+        for (int i = 0; i < index; i++) {
+            newArray[i] = array[i];
+        }
+        
+        newArray[index] = data;
+        
+        for (int i = index + 1; i < newArray.length; i++) {
+            newArray[i] = array[i - 1];
+        }
+        
+        array = new int[newArray.length];
+        
+        for (int i = 0; i < array.length; i++) {
             array[i] = newArray[i];
         }
         // Ends here

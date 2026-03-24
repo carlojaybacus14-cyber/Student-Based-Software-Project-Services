@@ -33,12 +33,13 @@ public class DoublyLinkedList {
         
         Node current = head;
         
-        String strContainer = "null <- ";
+        String strContainer = "";
         while (current.next != null) {
             strContainer += current.data + " <-> ";
             current = current.next;
         }
-        return strContainer += current.data + " -> null\n";
+        
+        return strContainer += current.data + " <-> null\n";
     }
 
     // --- DISPLAY FORWARD ---
