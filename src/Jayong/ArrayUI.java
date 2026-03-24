@@ -1,4 +1,4 @@
-package Jayong.DSAFRAME;
+package Jayong;
 
 import java.util.Arrays;
 import javax.swing.JOptionPane;
@@ -51,9 +51,6 @@ public class ArrayUI extends javax.swing.JFrame {
 
         btnAdd.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         btnAdd.setText("ADD");
-        btnAdd.setMaximumSize(new java.awt.Dimension(76, 29));
-        btnAdd.setMinimumSize(new java.awt.Dimension(76, 29));
-        btnAdd.setPreferredSize(new java.awt.Dimension(76, 29));
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);

@@ -1,4 +1,4 @@
-package Jayong.DSAFRAME;
+package Jayong;
 
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;

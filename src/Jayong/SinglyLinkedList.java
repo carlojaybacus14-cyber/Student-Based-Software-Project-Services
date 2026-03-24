@@ -1,4 +1,4 @@
-package Jayong.DSAFRAME;
+package Jayong;
 
 public class SinglyLinkedList {
 
