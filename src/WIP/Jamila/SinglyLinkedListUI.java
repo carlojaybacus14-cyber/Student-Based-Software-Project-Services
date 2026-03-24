@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Jamila;
+package WIP.Jamila;
 
 import java.awt.Color;
 
@@ -10,14 +10,14 @@ import java.awt.Color;
  *
  * @author Rainier
  */
-public class ArrayUI extends javax.swing.JFrame {
+public class SinglyLinkedListUI extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SinglyLinkedListUI.class.getName());
 
     /**
      * Creates new form ArrayUI
      */
-    public ArrayUI() {
+    public SinglyLinkedListUI() {
         initComponents();
         getContentPane().setBackground(new Color(10, 15, 30));
     }
@@ -34,10 +34,10 @@ public class ArrayUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtInputData = new javax.swing.JTextField();
-        btnAdd = new javax.swing.JButton();
-        btnRemove = new javax.swing.JButton();
         btnInsert = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnLength = new javax.swing.JButton();
+        btnDisplay = new javax.swing.JButton();
         txtOutput = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
@@ -46,44 +46,44 @@ public class ArrayUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(241, 245, 249));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ARRAY");
+        jLabel1.setText("SINGLY LINKED LIST");
 
         jLabel2.setFont(new java.awt.Font("Rajdhani", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(148, 163, 184));
         jLabel2.setText("Enter Data:");
 
-        txtInputData.setBackground(new java.awt.Color(20, 30, 50));
+        txtInputData.setBackground(new java.awt.Color(30, 41, 59));
         txtInputData.setFont(new java.awt.Font("JetBrains Mono SemiBold", 0, 14)); // NOI18N
         txtInputData.setForeground(new java.awt.Color(241, 245, 249));
         txtInputData.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtInputData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
-
-        btnAdd.setBackground(new java.awt.Color(37, 99, 235));
-        btnAdd.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setText("Add");
-
-        btnRemove.setBackground(new java.awt.Color(37, 99, 235));
-        btnRemove.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnRemove.setForeground(new java.awt.Color(255, 255, 255));
-        btnRemove.setText("Remove");
+        txtInputData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 65, 85), 1, true));
 
         btnInsert.setBackground(new java.awt.Color(37, 99, 235));
         btnInsert.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
         btnInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnInsert.setText("Insert");
 
-        btnClear.setBackground(new java.awt.Color(239, 68, 68));
-        btnClear.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnClear.setForeground(new java.awt.Color(255, 255, 255));
-        btnClear.setText("Clear");
+        btnDelete.setBackground(new java.awt.Color(220, 38, 38));
+        btnDelete.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
 
-        txtOutput.setBackground(new java.awt.Color(20, 30, 50));
+        btnLength.setBackground(new java.awt.Color(37, 99, 235));
+        btnLength.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnLength.setForeground(new java.awt.Color(255, 255, 255));
+        btnLength.setText("Length");
+
+        btnDisplay.setBackground(new java.awt.Color(37, 99, 235));
+        btnDisplay.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnDisplay.setForeground(new java.awt.Color(255, 255, 255));
+        btnDisplay.setText("Display");
+
+        txtOutput.setBackground(new java.awt.Color(30, 41, 59));
         txtOutput.setColumns(20);
         txtOutput.setFont(new java.awt.Font("JetBrains Mono NL", 0, 14)); // NOI18N
         txtOutput.setForeground(new java.awt.Color(241, 245, 249));
         txtOutput.setRows(5);
-        txtOutput.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
+        txtOutput.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 65, 85), 1, true));
 
         jLabel3.setFont(new java.awt.Font("Rajdhani Medium", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(148, 163, 184));
@@ -103,13 +103,13 @@ public class ArrayUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtInputData))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -120,7 +120,7 @@ public class ArrayUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -130,11 +130,11 @@ public class ArrayUI extends javax.swing.JFrame {
                 .addComponent(txtOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -162,14 +162,14 @@ public class ArrayUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ArrayUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new SinglyLinkedListUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDisplay;
     private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnLength;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

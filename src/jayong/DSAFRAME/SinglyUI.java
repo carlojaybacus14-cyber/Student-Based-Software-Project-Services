@@ -7,7 +7,7 @@ public class SinglyUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SinglyUI.class.getName());
 
-    private SinglyLinkedList singlyList = new SinglyLinkedList();
+    private final SinglyLinkedList singlyList = new SinglyLinkedList();
 
     private String strContainer = "";
 

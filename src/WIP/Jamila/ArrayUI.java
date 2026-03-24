@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Jamila;
+package WIP.Jamila;
 
 import java.awt.Color;
 
@@ -10,14 +10,14 @@ import java.awt.Color;
  *
  * @author Rainier
  */
-public class StackUI extends javax.swing.JFrame {
+public class ArrayUI extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StackUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayUI.class.getName());
 
     /**
      * Creates new form ArrayUI
      */
-    public StackUI() {
+    public ArrayUI() {
         initComponents();
         getContentPane().setBackground(new Color(10, 15, 30));
     }
@@ -34,10 +34,10 @@ public class StackUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtInputData = new javax.swing.JTextField();
-        btnPush = new javax.swing.JButton();
-        btnPop = new javax.swing.JButton();
-        btnPeek = new javax.swing.JButton();
-        btnEmpty = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnRemove = new javax.swing.JButton();
+        btnInsert = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         txtOutput = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
@@ -46,7 +46,7 @@ public class StackUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(241, 245, 249));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("STACK");
+        jLabel1.setText("ARRAY");
 
         jLabel2.setFont(new java.awt.Font("Rajdhani", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(148, 163, 184));
@@ -58,25 +58,25 @@ public class StackUI extends javax.swing.JFrame {
         txtInputData.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtInputData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
 
-        btnPush.setBackground(new java.awt.Color(37, 99, 235));
-        btnPush.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnPush.setForeground(new java.awt.Color(255, 255, 255));
-        btnPush.setText("Push");
+        btnAdd.setBackground(new java.awt.Color(37, 99, 235));
+        btnAdd.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setText("Add");
 
-        btnPop.setBackground(new java.awt.Color(220, 38, 38));
-        btnPop.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnPop.setForeground(new java.awt.Color(255, 255, 255));
-        btnPop.setText("Pop");
+        btnRemove.setBackground(new java.awt.Color(37, 99, 235));
+        btnRemove.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnRemove.setForeground(new java.awt.Color(255, 255, 255));
+        btnRemove.setText("Remove");
 
-        btnPeek.setBackground(new java.awt.Color(37, 99, 235));
-        btnPeek.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnPeek.setForeground(new java.awt.Color(255, 255, 255));
-        btnPeek.setText("Peek");
+        btnInsert.setBackground(new java.awt.Color(37, 99, 235));
+        btnInsert.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
+        btnInsert.setText("Insert");
 
-        btnEmpty.setBackground(new java.awt.Color(37, 99, 235));
-        btnEmpty.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnEmpty.setForeground(new java.awt.Color(255, 255, 255));
-        btnEmpty.setText("Empty");
+        btnClear.setBackground(new java.awt.Color(239, 68, 68));
+        btnClear.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
+        btnClear.setText("Clear");
 
         txtOutput.setBackground(new java.awt.Color(20, 30, 50));
         txtOutput.setColumns(20);
@@ -103,13 +103,13 @@ public class StackUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtInputData))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnPush, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(btnPop, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEmpty, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -130,10 +130,10 @@ public class StackUI extends javax.swing.JFrame {
                 .addComponent(txtOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPush, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPop, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPeek, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEmpty, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -162,14 +162,14 @@ public class StackUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new StackUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ArrayUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEmpty;
-    private javax.swing.JButton btnPeek;
-    private javax.swing.JButton btnPop;
-    private javax.swing.JButton btnPush;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnInsert;
+    private javax.swing.JButton btnRemove;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
