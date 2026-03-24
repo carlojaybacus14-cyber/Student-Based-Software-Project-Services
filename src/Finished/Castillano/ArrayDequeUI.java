@@ -11,7 +11,7 @@ public class ArrayDequeUI extends javax.swing.JFrame {
     private String texts = "";
 
     private final ArrayDeque<Integer> arrayDeque;
-    
+
     private final OfferDialog offerDialog;
 
     public ArrayDequeUI() {
@@ -164,9 +164,9 @@ public class ArrayDequeUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Invalid input.");
             return;
         }
-        
+
         offerDialog.setVisible(true);
-        
+
         switch (offerDialog.getOfferType()) {
             case "FIRST" -> {
                 arrayDeque.offerFirst(data);
@@ -176,12 +176,12 @@ public class ArrayDequeUI extends javax.swing.JFrame {
             }
             default -> {
                 return;
-            }  
+            }
         }
 
         texts += arrayDeque + "\n";
         txtInput.setText("");
-        
+
         displayText();
     }//GEN-LAST:event_btnOfferActionPerformed
 
@@ -195,7 +195,7 @@ public class ArrayDequeUI extends javax.swing.JFrame {
 
         texts += arrayDeque + "\n";
         txtInput.setText("");
-        
+
         displayText();
     }//GEN-LAST:event_btnPollActionPerformed
 
@@ -204,11 +204,11 @@ public class ArrayDequeUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Deque is empty.");
             return;
         }
-        
+
         int element = arrayDeque.peek();
-        
+
         texts += "Top element: " + element + "\n";
-        
+
         displayText();
     }//GEN-LAST:event_btnPeekActionPerformed
 
