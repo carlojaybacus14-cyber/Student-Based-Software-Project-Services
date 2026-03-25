@@ -6,10 +6,6 @@ package WIP.Francisco;
 
 import java.awt.Color;
 
-/**
- *
- * @author Jay Aguirre Alfeche
- */
 public class ArrayDequeDemo extends javax.swing.JFrame {
         
         private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeDemo.class.getName());

@@ -8,10 +8,6 @@ import java.awt.Color;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Jay Aguirre Alfeche
- */
 public class ArrayDemo extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDemo.class.getName());

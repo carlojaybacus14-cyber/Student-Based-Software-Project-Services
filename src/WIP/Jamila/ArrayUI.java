@@ -24,137 +24,135 @@ public class ArrayUI extends javax.swing.JFrame {
 
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+        // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+        private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtInputData = new javax.swing.JTextField();
-        btnAdd = new javax.swing.JButton();
-        btnRemove = new javax.swing.JButton();
-        btnInsert = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
-        txtOutput = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
+                jLabel1 = new javax.swing.JLabel();
+                jLabel2 = new javax.swing.JLabel();
+                txtInputData = new javax.swing.JTextField();
+                btnAdd = new javax.swing.JButton();
+                btnRemove = new javax.swing.JButton();
+                btnInsert = new javax.swing.JButton();
+                btnClear = new javax.swing.JButton();
+                txtOutput = new javax.swing.JTextArea();
+                jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(241, 245, 249));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ARRAY");
+                jLabel1.setFont(new java.awt.Font("Rajdhani", 1, 48)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(241, 245, 249));
+                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                jLabel1.setText("ARRAY");
 
-        jLabel2.setFont(new java.awt.Font("Rajdhani", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(148, 163, 184));
-        jLabel2.setText("Enter Data:");
+                jLabel2.setFont(new java.awt.Font("Rajdhani", 1, 15)); // NOI18N
+                jLabel2.setForeground(new java.awt.Color(148, 163, 184));
+                jLabel2.setText("Enter Data:");
 
-        txtInputData.setBackground(new java.awt.Color(20, 30, 50));
-        txtInputData.setFont(new java.awt.Font("JetBrains Mono SemiBold", 0, 14)); // NOI18N
-        txtInputData.setForeground(new java.awt.Color(241, 245, 249));
-        txtInputData.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtInputData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
+                txtInputData.setBackground(new java.awt.Color(20, 30, 50));
+                txtInputData.setFont(new java.awt.Font("JetBrains Mono SemiBold", 0, 14)); // NOI18N
+                txtInputData.setForeground(new java.awt.Color(241, 245, 249));
+                txtInputData.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+                txtInputData.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
 
-        btnAdd.setBackground(new java.awt.Color(37, 99, 235));
-        btnAdd.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setText("Add");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
-            }
-        });
+                btnAdd.setBackground(new java.awt.Color(37, 99, 235));
+                btnAdd.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+                btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+                btnAdd.setText("Add");
+                btnAdd.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnAddActionPerformed(evt);
+                        }
+                });
 
-        btnRemove.setBackground(new java.awt.Color(37, 99, 235));
-        btnRemove.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnRemove.setForeground(new java.awt.Color(255, 255, 255));
-        btnRemove.setText("Remove");
-        btnRemove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveActionPerformed(evt);
-            }
-        });
+                btnRemove.setBackground(new java.awt.Color(37, 99, 235));
+                btnRemove.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+                btnRemove.setForeground(new java.awt.Color(255, 255, 255));
+                btnRemove.setText("Remove");
+                btnRemove.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnRemoveActionPerformed(evt);
+                        }
+                });
 
-        btnInsert.setBackground(new java.awt.Color(37, 99, 235));
-        btnInsert.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
-        btnInsert.setText("Insert");
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
-            }
-        });
+                btnInsert.setBackground(new java.awt.Color(37, 99, 235));
+                btnInsert.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+                btnInsert.setForeground(new java.awt.Color(255, 255, 255));
+                btnInsert.setText("Insert");
+                btnInsert.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnInsertActionPerformed(evt);
+                        }
+                });
 
-        btnClear.setBackground(new java.awt.Color(239, 68, 68));
-        btnClear.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
-        btnClear.setForeground(new java.awt.Color(255, 255, 255));
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
+                btnClear.setBackground(new java.awt.Color(239, 68, 68));
+                btnClear.setFont(new java.awt.Font("Rajdhani SemiBold", 1, 16)); // NOI18N
+                btnClear.setForeground(new java.awt.Color(255, 255, 255));
+                btnClear.setText("Clear");
+                btnClear.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                btnClearActionPerformed(evt);
+                        }
+                });
 
-        txtOutput.setBackground(new java.awt.Color(20, 30, 50));
-        txtOutput.setColumns(20);
-        txtOutput.setFont(new java.awt.Font("JetBrains Mono NL", 0, 14)); // NOI18N
-        txtOutput.setForeground(new java.awt.Color(241, 245, 249));
-        txtOutput.setRows(5);
-        txtOutput.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
+                txtOutput.setBackground(new java.awt.Color(20, 30, 50));
+                txtOutput.setColumns(20);
+                txtOutput.setFont(new java.awt.Font("JetBrains Mono NL", 0, 14)); // NOI18N
+                txtOutput.setForeground(new java.awt.Color(241, 245, 249));
+                txtOutput.setRows(5);
+                txtOutput.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(59, 130, 246), 1, true));
 
-        jLabel3.setFont(new java.awt.Font("Rajdhani Medium", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(148, 163, 184));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Output");
+                jLabel3.setFont(new java.awt.Font("Rajdhani Medium", 1, 14)); // NOI18N
+                jLabel3.setForeground(new java.awt.Color(148, 163, 184));
+                jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                jLabel3.setText("Output");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtOutput)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                getContentPane().setLayout(layout);
+                layout.setHorizontalGroup(
+                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                                .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtOutput)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap())
+                );
+                layout.setVerticalGroup(
+                        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(18, Short.MAX_VALUE))
+                );
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+                pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         String str = txtInputData.getText();
@@ -332,15 +330,15 @@ public class ArrayUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new ArrayUI().setVisible(true));
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnRemove;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtInputData;
-    private javax.swing.JTextArea txtOutput;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JButton btnAdd;
+        private javax.swing.JButton btnClear;
+        private javax.swing.JButton btnInsert;
+        private javax.swing.JButton btnRemove;
+        private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel2;
+        private javax.swing.JLabel jLabel3;
+        private javax.swing.JTextField txtInputData;
+        private javax.swing.JTextArea txtOutput;
+        // End of variables declaration//GEN-END:variables
 }

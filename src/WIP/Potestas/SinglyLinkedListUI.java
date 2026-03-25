@@ -6,10 +6,6 @@ package WIP.Potestas;
 
 import java.awt.Color;
 
-/**
- *
- * @author Jay Aguirre Alfeche
- */
 public class SinglyLinkedListUI extends javax.swing.JFrame {
         
         private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SinglyLinkedListUI.class.getName());

@@ -6,10 +6,6 @@ package WIP.Martinez;
 
 import java.awt.Color;
 
-/**
- *
- * @author Jay Aguirre Alfeche
- */
 public class ArrayDemo extends javax.swing.JFrame {
         
         private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDemo.class.getName());
