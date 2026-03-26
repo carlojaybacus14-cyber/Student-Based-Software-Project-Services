@@ -1,4 +1,4 @@
-package WIP.Potestas;
+package Finished.Potestas;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;

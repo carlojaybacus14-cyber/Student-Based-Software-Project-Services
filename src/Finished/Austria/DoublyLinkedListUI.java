@@ -1,4 +1,4 @@
-package WIP.Potestas;
+package Finished.Austria;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -7,13 +7,13 @@ public class DoublyLinkedListUI extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DoublyLinkedListUI.class.getName());
 
-    private String txtContainer = "";
-    
+    private String strContainer = "";
+
     private final DoublyLinkedList doublyList;
-    
+
     public DoublyLinkedListUI() {
         initComponents();
-        getContentPane().setBackground(new Color(26, 16, 46));
+        getContentPane().setBackground(new Color(40, 90, 210));
         doublyList = new DoublyLinkedList();
     }
 
@@ -21,119 +21,116 @@ public class DoublyLinkedListUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnLength = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtOutput = new javax.swing.JTextArea();
-        btnDelete = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        btnInsert = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtInput = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaOutput = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        txtInputData = new javax.swing.JTextField();
+        btnInsert = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnInsertAfter = new javax.swing.JButton();
+        btnLength = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnLength.setBackground(new java.awt.Color(36, 23, 64));
-        btnLength.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        btnLength.setForeground(new java.awt.Color(240, 230, 255));
-        btnLength.setText("Length");
-        btnLength.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLengthActionPerformed(evt);
-            }
-        });
+        jLabel1.setBackground(new java.awt.Color(30, 60, 180));
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("DOUBLY LINKED LIST");
 
-        txtOutput.setBackground(new java.awt.Color(18, 12, 32));
-        txtOutput.setColumns(20);
-        txtOutput.setForeground(new java.awt.Color(240, 230, 255));
-        txtOutput.setRows(5);
-        jScrollPane1.setViewportView(txtOutput);
+        txtAreaOutput.setBackground(new java.awt.Color(255, 255, 255));
+        txtAreaOutput.setColumns(20);
+        txtAreaOutput.setRows(5);
+        jScrollPane1.setViewportView(txtAreaOutput);
 
-        btnDelete.setBackground(new java.awt.Color(36, 23, 64));
-        btnDelete.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(240, 230, 255));
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
+        jLabel2.setBackground(new java.awt.Color(30, 60, 180));
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Enter Data:");
 
-        btnClear.setBackground(new java.awt.Color(36, 23, 64));
-        btnClear.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        btnClear.setForeground(new java.awt.Color(240, 230, 255));
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
+        txtInputData.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 193, 74));
-        jLabel2.setText("Enter Element:");
-
-        btnInsert.setBackground(new java.awt.Color(36, 23, 64));
-        btnInsert.setFont(new java.awt.Font("Sitka Text", 1, 14)); // NOI18N
-        btnInsert.setForeground(new java.awt.Color(240, 230, 255));
-        btnInsert.setText("Insert");
+        btnInsert.setBackground(new java.awt.Color(10, 30, 120));
+        btnInsert.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        btnInsert.setForeground(new java.awt.Color(255, 255, 255));
+        btnInsert.setText("INSERT");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsertActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 193, 74));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("DOUBLY LINKED LIST");
+        btnDelete.setBackground(new java.awt.Color(10, 30, 120));
+        btnDelete.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("DELETE");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
-        txtInput.setBackground(new java.awt.Color(136, 112, 168));
-        txtInput.setForeground(new java.awt.Color(240, 230, 255));
+        btnInsertAfter.setBackground(new java.awt.Color(10, 30, 120));
+        btnInsertAfter.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        btnInsertAfter.setForeground(new java.awt.Color(255, 255, 255));
+        btnInsertAfter.setText("INSERT AFTER");
+        btnInsertAfter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertAfterActionPerformed(evt);
+            }
+        });
+
+        btnLength.setBackground(new java.awt.Color(10, 30, 120));
+        btnLength.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        btnLength.setForeground(new java.awt.Color(255, 255, 255));
+        btnLength.setText("LENGTH");
+        btnLength.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLengthActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnInsert, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtInputData, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                        .addComponent(btnInsertAfter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLength, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnInsert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(338, 338, 338)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLength, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                            .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)))
-                    .addComponent(txtInput, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtInputData, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnLength, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addComponent(btnInsertAfter, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         pack();
@@ -141,7 +138,7 @@ public class DoublyLinkedListUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        String str = txtInput.getText();
+        String str = txtInputData.getText();
 
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter a data");
@@ -159,18 +156,53 @@ public class DoublyLinkedListUI extends javax.swing.JFrame {
         
         doublyList.insertAtEnd(data);
 
-        txtInput.setText("");
-        txtContainer += doublyList.printList() + "\n";
-        txtOutput.setText(txtContainer);
+        txtInputData.setText("");
+        strContainer += doublyList.printList() + "\n";
+        txtAreaOutput.setText(strContainer);
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnLengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLengthActionPerformed
-        txtContainer += "Length: " + doublyList.size() + "\n";
-        txtOutput.setText(txtContainer);
+        strContainer += "Length: " + doublyList.size() + "\n";
+        txtAreaOutput.setText(strContainer);
     }//GEN-LAST:event_btnLengthActionPerformed
 
+    private void btnInsertAfterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertAfterActionPerformed
+        String str1 = txtInputData.getText();
+
+        if (str1.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a data");
+            return;
+        }
+        
+        int data, prevData;
+
+        try {
+            
+            data = Integer.parseInt(str1);
+            
+            String str2 = JOptionPane.showInputDialog("Insert " + data + " after: ");
+            
+            if (str2.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Enter a data");
+                return;
+            }
+            
+            prevData = Integer.parseInt(str2);
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+        
+        doublyList.insertAfter(prevData, data);
+
+        txtInputData.setText("");
+        strContainer += doublyList.printList() + "\n";
+        txtAreaOutput.setText(strContainer);
+    }//GEN-LAST:event_btnInsertAfterActionPerformed
+
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        String str = txtInput.getText();
+        String str = txtInputData.getText();
 
         if (doublyList.size() == 0) {
             JOptionPane.showMessageDialog(this, "List is empty");
@@ -198,16 +230,10 @@ public class DoublyLinkedListUI extends javax.swing.JFrame {
             return;
         }
 
-        txtInput.setText("");
-        txtContainer += doublyList.printList() + "\n";
-        txtOutput.setText(txtContainer);
+        txtInputData.setText("");
+        strContainer += doublyList.printList() + "\n";
+        txtAreaOutput.setText(strContainer);
     }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        doublyList.clear();
-        txtContainer += "List is cleared\n";
-        txtOutput.setText(txtContainer);
-    }//GEN-LAST:event_btnClearActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -232,15 +258,15 @@ public class DoublyLinkedListUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInsert;
+    private javax.swing.JButton btnInsertAfter;
     private javax.swing.JButton btnLength;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtInput;
-    private javax.swing.JTextArea txtOutput;
+    private javax.swing.JTextArea txtAreaOutput;
+    private javax.swing.JTextField txtInputData;
     // End of variables declaration//GEN-END:variables
 }
 
@@ -449,7 +475,7 @@ class DoublyLinkedList {
         }
         size--;
     }
-    
+
     public void clear() {
         head = null;
         size = 0;

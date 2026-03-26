@@ -9,9 +9,9 @@ public class ArrayFrame extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayFrame.class.getName());
 
     private String txtContainer = "";
-    
+
     private int[] array;
-    
+
     public ArrayFrame() {
         initComponents();
         getContentPane().setBackground(new Color(13, 42, 46));
@@ -145,37 +145,37 @@ public class ArrayFrame extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter a data");
             return;
         }
-        
+
         int data;
-        
+
         try {
             data = Integer.parseInt(str);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input");
             return;
         }
-        
+
         // Process of adding data in an array
         int[] newArray = new int[array.length];
-        
+
         for (int i = 0; i < array.length; i++) {
             newArray[i] = array[i];
         }
-        
+
         array = new int[array.length + 1];
-        
+
         for (int i = 0; i < newArray.length; i++) {
             array[i] = newArray[i];
         }
-        
+
         array[newArray.length] = data;
         // Ends here
-        
+
         txtContainer += Arrays.toString(array) + "\n";
         txtOutput.setText(txtContainer);
     }//GEN-LAST:event_btnAddActionPerformed
@@ -185,19 +185,19 @@ public class ArrayFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Array is empty");
             return;
         }
-        
+
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter an index");
             return;
         }
-        
+
         int index;
-        
+
         try {
             index = Integer.parseInt(str);
-            
+
             if (index < 0 || index >= array.length) {
                 JOptionPane.showMessageDialog(this, "Index out of bounds");
                 return;
@@ -206,25 +206,25 @@ public class ArrayFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Invalid input");
             return;
         }
-        
+
         // Process of removing/deleting data in an array
         int[] newArray = new int[array.length - 1];
-        
+
         for (int i = 0; i < index; i++) {
             newArray[i] = array[i];
         }
-        
+
         for (int i = index; i < newArray.length; i++) {
             newArray[i] = array[i + 1];
         }
-        
+
         array = new int[newArray.length];
-        
+
         for (int i = 0; i < newArray.length; i++) {
             array[i] = newArray[i];
         }
         // Ends here
-        
+
         txtContainer += Arrays.toString(array) + "\n";
         txtOutput.setText(txtContainer);
     }//GEN-LAST:event_btnRemoveActionPerformed
@@ -234,27 +234,27 @@ public class ArrayFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Array is empty");
             return;
         }
-        
+
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Enter a data");
             return;
         }
-        
+
         int data, index;
-        
+
         try {
             data = Integer.parseInt(str);
-            
+
             str = JOptionPane.showInputDialog("Insert " + data + " at index:");
-            
+
             if (str == null) {
                 return;
             }
-            
+
             index = Integer.parseInt(str);
-            
+
             if (index < 0 || index >= array.length) {
                 JOptionPane.showMessageDialog(this, "Index out of bounds");
                 return;
@@ -263,27 +263,27 @@ public class ArrayFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Invalid input");
             return;
         }
-        
+
         // Process of inserting data in an array
         int[] newArray = new int[array.length + 1];
-        
+
         for (int i = 0; i < index; i++) {
             newArray[i] = array[i];
         }
-        
+
         newArray[index] = data;
-        
+
         for (int i = index + 1; i < newArray.length; i++) {
             newArray[i] = array[i - 1];
         }
-        
+
         array = new int[newArray.length];
-        
+
         for (int i = 0; i < array.length; i++) {
             array[i] = newArray[i];
         }
         // Ends here
-        
+
         txtContainer += Arrays.toString(array) + "\n";
         txtOutput.setText(txtContainer);
     }//GEN-LAST:event_btnInsertActionPerformed
