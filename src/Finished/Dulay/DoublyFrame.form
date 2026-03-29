@@ -44,10 +44,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="btnClear" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnPoll" alignment="0" pref="110" max="32767" attributes="0"/>
-                  <Component id="btnPeek" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnOffer" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnDisplay" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnLength" alignment="0" pref="110" max="32767" attributes="0"/>
+                  <Component id="btnDelete" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnInsert" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabel2" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -74,13 +74,13 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnOffer" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnInsert" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPeek" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPoll" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnLength" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnClear" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnDisplay" min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -90,7 +90,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnClear">
+    <Component class="javax.swing.JButton" name="btnDisplay">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="32" green="b" red="8a" type="rgb"/>
@@ -98,8 +98,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="text" type="java.lang.String" value="Display"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDisplayActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -110,7 +113,7 @@
           <Color blue="97" green="70" red="e8" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="ARRAYLIST"/>
+        <Property name="text" type="java.lang.String" value="DOUBLY LINKED LIST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -173,7 +176,7 @@
         <Property name="text" type="java.lang.String" value="Output:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnOffer">
+    <Component class="javax.swing.JButton" name="btnInsert">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="32" green="b" red="8a" type="rgb"/>
@@ -181,10 +184,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Add"/>
+        <Property name="text" type="java.lang.String" value="Insert"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPeek">
+    <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="32" green="b" red="8a" type="rgb"/>
@@ -192,10 +198,13 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Change"/>
+        <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPoll">
+    <Component class="javax.swing.JButton" name="btnLength">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="32" green="b" red="8a" type="rgb"/>
@@ -203,8 +212,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Remove"/>
+        <Property name="text" type="java.lang.String" value="Length"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLengthActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

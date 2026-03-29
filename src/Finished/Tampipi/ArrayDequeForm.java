@@ -9,13 +9,13 @@ public class ArrayDequeForm extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ArrayDequeForm.class.getName());
 
     private String txtContainer = "";
-    
-    private final ArrayDeque<Integer> arrayDeque;
-    
-    public ArrayDequeForm() {
+
+    private final ArrayDeque<Integer> arrayDeque; // Declare variable
+
+    public ArrayDequeForm() { // Constructor
         initComponents();
         getContentPane().setBackground(new Color(255, 209, 220));
-        arrayDeque = new ArrayDeque<>();
+        arrayDeque = new ArrayDeque<>(); // Initialize arrayDeque
     }
 
     @SuppressWarnings("unchecked")
@@ -141,35 +141,37 @@ public class ArrayDequeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
+
         String str = txtInput.getText();
-        
+
         if (str.isBlank()) {
             JOptionPane.showMessageDialog(this, "Please enter something");
             return;
         }
-        
+
         int data;
-        
+
         try {
             data = Integer.parseInt(str);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input");
             return;
         }
-        
+
         arrayDeque.offer(data);
-        
+
         txtInput.setText("");
         txtContainer += arrayDeque + "\n";
         txtOutput.setText(txtContainer);
     }//GEN-LAST:event_btnOfferActionPerformed
 
     private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+
         if (arrayDeque.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Deque is empty");
             return;
         }
-        
+
         txtContainer += "Top Element: " + arrayDeque.peek() + "\n";
         txtOutput.setText(txtContainer);
     }//GEN-LAST:event_btnPeekActionPerformed
@@ -181,13 +183,14 @@ public class ArrayDequeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnPollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPollActionPerformed
+
         if (arrayDeque.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Deque is empty");
             return;
         }
-        
+
         arrayDeque.poll();
-        
+
         txtContainer += arrayDeque + "\n";
         txtOutput.setText(txtContainer);
     }//GEN-LAST:event_btnPollActionPerformed
@@ -225,5 +228,4 @@ public class ArrayDequeForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtInput;
     private javax.swing.JTextArea txtOutput;
     // End of variables declaration//GEN-END:variables
-
 }
