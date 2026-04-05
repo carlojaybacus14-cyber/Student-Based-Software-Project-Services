@@ -180,7 +180,7 @@ public class DoublyLinkedListDemo extends javax.swing.JFrame {
             return;
         }
 
-        int data;
+        int data ;
 
         try {
             data = Integer.parseInt(str);

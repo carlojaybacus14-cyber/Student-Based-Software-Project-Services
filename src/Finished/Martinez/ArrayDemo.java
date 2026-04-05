@@ -233,8 +233,63 @@ public class ArrayDemo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        texts += "Length: " + array.length + "\n";
+        if (array.length == 0) {
+            JOptionPane.showMessageDialog(this, "Array is empty");
+            return;
+        }
+
+        String str = inputData.getText();
+
+        if (str.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Enter a data");
+            return;
+        }
+
+        int data, index;
+
+        try {
+            data = Integer.parseInt(str);
+
+            str = JOptionPane.showInputDialog("Insert " + data + " at index:");
+
+            if (str == null) {
+                return;
+            }
+
+            index = Integer.parseInt(str);
+
+            if (index < 0 || index >= array.length) {
+                JOptionPane.showMessageDialog(this, "Index out of bounds");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid input");
+            return;
+        }
+
+        // Process of inserting data in an array
+        int[] newArray = new int[array.length + 1];
+
+        for (int i = 0; i < index; i++) {
+            newArray[i] = array[i];
+        }
+
+        newArray[index] = data;
+
+        for (int i = index + 1; i < newArray.length; i++) {
+            newArray[i] = array[i - 1];
+        }
+
+        array = new int[newArray.length];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = newArray[i];
+        }
+        // Ends here
+
+        texts += Arrays.toString(array) + "\n";
         outputResult.setText(texts);
+
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed

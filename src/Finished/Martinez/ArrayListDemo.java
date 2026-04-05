@@ -168,7 +168,6 @@ public class ArrayListDemo extends javax.swing.JFrame {
         inputData.setText("");
 
         outputResult.setText(texts);
-        
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetActionPerformed
